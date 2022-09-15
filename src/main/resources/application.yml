@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      binders:
+        default_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+      bindings:
+        sendExampleData1-out-0:
+          destination: topic42
+          binder: default_rabbit
